@@ -1,0 +1,65 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+/* El JS actualiza estas variables según el ancho de pantalla */
+:root {
+  --size: 400px;     /* lado de cada portada */
+  --reveal: 300px;   /* cuánto se desliza el disco al pasar el ratón */
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Centrado vertical y horizontal de la colección */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.record-collection {
+  display: flex;            /* sin huecos entre discos */
+  width: 100%;
+  overflow: hidden;         /* oculta el espacio original de los discos desplazados */
+  white-space: nowrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 0;
+}
+
+div.albumcover, div.first-albumcover {
+  flex: 0 0 auto;
+  height: var(--size);
+  width: var(--size);
+  margin-top: 15px;
+  margin-bottom: 0px;
+  background: lightgray;
+  opacity: 1;
+  text-align: right;
+}
+
+div.albumcover img, div.first-albumcover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+div.first-albumcover {
+  position: relative;
+  background: lightgray;
+  z-index: 1000;
+}
+
+div.albumcover {
+  position: relative;
+}
+
+div.albumcover:hover {
+  transform: rotate(-2deg) translate(var(--reveal));
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
+  transform-origin: 0 100%;
+}
