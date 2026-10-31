@@ -62,3 +62,15 @@ div.albumcover:hover {
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
 }
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  size: 20rem;
+  display: flex;
+  margin-left: 50%;
+}
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  size: 20rem;
+  display: flex;
+  align-items: center;
+}
