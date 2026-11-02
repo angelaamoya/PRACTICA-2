@@ -61,3 +61,305 @@ div.albumcover:hover {
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
 }
+/* tienda */
+.Tienda {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-self: start;
+  font-size: 2rem;
+}
+
+/* =========================================================
+   CARTEL DEL FESTIVAL · Array de objetos · Diseño Web Avanzado
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+    --color-fondo: #F3F6F5;
+    --color-superficie: #FFFFFF;
+    --color-texto: #12181B;
+    --color-suave: #5B6B67;
+    --color-acento: #16BFAE;
+    --color-borde: #DCE3E1;
+
+    --fuente-ui: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --fuente-codigo: "Courier New", monospace;
+
+    --espacio: 1.5rem;
+    --radio: 12px;
+    --ancho-max: 1100px;
+    --transicion: 0.25s ease;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--espacio) * 1.5);
+    padding: calc(var(--espacio) * 2) var(--espacio);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-ui);
+    line-height: 1.5;
+}
+
+code {
+    font-family: var(--fuente-codigo);
+    font-size: 0.95em;
+    padding: 0.05rem 0.35rem;
+    background-color: var(--color-borde);
+    border-radius: 4px;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.cabecera__kicker {
+    font-family: var(--fuente-codigo);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+}
+
+.cabecera h1 {
+    font-size: 2.4rem;
+}
+
+.cabecera__texto {
+    color: var(--color-suave);
+}
+
+/* ---------- Contenido ---------- */
+.contenido {
+    width: 100%;
+    max-width: var(--ancho-max);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio);
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.filtro {
+    padding: 0.55rem 1.2rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-texto);
+    background-color: var(--color-superficie);
+    border: 2px solid var(--color-texto);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+}
+
+.filtro:hover {
+    border-color: var(--color-acento);
+}
+
+/* Clase que añade el JS al filtro elegido */
+.filtro.is-activo {
+    color: var(--color-superficie);
+    background-color: var(--color-texto);
+    border-color: var(--color-texto);
+}
+
+.contador {
+    font-family: var(--fuente-codigo);
+    font-size: 0.9rem;
+    color: var(--color-suave);
+}
+
+/* ---------- Cartel (las tarjetas las crea el JS) ---------- */
+.cartel {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio);
+}
+
+.artista {
+    flex: 0 1 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.artista:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(18, 24, 27, 0.12);
+}
+
+/* Zona de color tipo póster: el color llega desde los datos (style) */
+.artista__poster {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem;
+    background-color: var(--color-acento);
+}
+
+.artista__nombre {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-texto);
+    overflow-wrap: anywhere;
+}
+
+.artista__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+}
+
+.artista__datos {
+    font-size: 0.9rem;
+    color: var(--color-suave);
+}
+
+/* Mensaje si un filtro no tiene artistas (reto extra) */
+.cartel__vacio {
+    padding: var(--espacio);
+    color: var(--color-suave);
+    font-style: italic;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: calc(var(--radio) / 2);
+    cursor: pointer;
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.boton--borde {
+    color: var(--color-texto);
+    background-color: transparent;
+    border: 2px solid var(--color-texto);
+}
+
+.boton--borde:hover {
+    color: var(--color-superficie);
+    background-color: var(--color-texto);
+}
+
+/* ---------- Ventana modal ---------- */
+/* Oculta por defecto: el JS le añade la clase is-abierta */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--espacio);
+    background-color: rgba(18, 24, 27, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transicion), visibility var(--transicion);
+}
+
+.modal.is-abierta {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__caja {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    padding: calc(var(--espacio) * 1.5);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    transform: translateY(20px);
+    transition: transform var(--transicion);
+}
+
+.modal.is-abierta .modal__caja {
+    transform: translateY(0);
+}
+
+.modal__etiqueta {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    padding: 0.2rem 0.7rem;
+    font-family: var(--fuente-codigo);
+    font-size: 0.8rem;
+    color: var(--color-superficie);
+    background-color: var(--color-texto);
+    border-radius: 999px;
+}
+
+.modal__titulo {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.modal__genero {
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: var(--color-acento);
+}
+
+.modal__texto {
+    color: var(--color-suave);
+}
+
+.modal__cerrar {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .artista {
+        flex-basis: 100%;
+    }
+
+    .cabecera h1 {
+        font-size: 2rem;
+    }
+}
+
