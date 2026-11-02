@@ -1,6 +1,7 @@
 /* NOTE that this is a relatively ugly solution. I use position: relative, changing the position of each album. The initial space of the elements remains in the DOM, so you need overflow: hidden to hide it. Alternative would be position: absolute on the albums.*/
 
-var albumCovers = document.getElementsByClassName("albumcover");
+var albumCovers
+= document.getElementsByClassName("albumcover");
 var recordBox = document.getElementById("record-collection");
 
 const PEEK_RATIO = 1 / 8;   

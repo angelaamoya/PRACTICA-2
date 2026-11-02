@@ -1,50 +1,31 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store</title>
-     <!--favicon -->
-
-    <!-- Tipografías (Google Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-     <!-- Tipografías (locales) -->
-
-    <!-- AOS desde CDN (jsDelivr), versión fijada -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<link rel="stylesheet" href="css/style.css">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="Tienda">
-  <h1>TIENDA</h1>
-</div>
+
+    <header class="cabecera">
+        <a href="index.html"><h1>TIENDA</h1></a>
+    </header>
+
     <main class="contenido">
 
         <!-- ============ FILTROS POR DÍA ============ -->
         <!-- Cada botón guarda en data-dia el día que filtra -->
         <nav class="filtros" aria-label="Filtrar por día">
             <button type="button" class="filtro is-activo" data-dia="Todos">Todos</button>
-            <button type="button" class="filtro" data-dia="Viernes">Rap</button>
-            <button type="button" class="filtro" data-dia="Sábado">Indie</button>
-            <button type="button" class="filtro" data-dia="Domingo">Pop-Rock internacional</button>
+            <button type="button" class="filtro" data-dia="Pop/Rock internacional">Pop/Rock internacional</button>
+            <button type="button" class="filtro" data-dia="Indie">Indie</button>
+            <button type="button" class="filtro" data-dia="Rap">Rap</button>
         </nav>
 
         <p class="contador" id="contador">Mostrando 0 artistas</p>
 
         <!-- ============ CARTEL ============ -->
-        <!-- Vacío a propósito: el JavaScript crea aquí dentro las tarjetas.
-             Cada tarjeta debe tener esta estructura:
-
-             <article class="artista">
-                 <div class="artista__poster" style="background-color: COLOR">
-                     <h2 class="artista__nombre">NOMBRE</h2>
-                 </div>
-                 <div class="artista__info">
-                     <p class="artista__datos">GÉNERO · DÍA</p>
-                     <button type="button" class="boton boton--borde boton-artista" data-indice="POSICIÓN">Ver más</button>
-                 </div>
-             </article>
-        -->
         <section class="cartel" id="cartel"></section>
 
     </main>

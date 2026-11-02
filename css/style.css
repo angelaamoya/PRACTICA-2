@@ -61,16 +61,9 @@ div.albumcover:hover {
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
 }
-/* tienda */
-.Tienda {
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  align-self: start;
-  font-size: 2rem;
-}
 
 /* =========================================================
-   CARTEL DEL FESTIVAL · Array de objetos · Diseño Web Avanzado
+   TIENDA
    ========================================================= */
 
 /* ---------- Variables ---------- */
@@ -120,31 +113,6 @@ code {
 }
 
 /* ---------- Cabecera ---------- */
-.cabecera {
-    width: 100%;
-    max-width: 720px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-}
-
-.cabecera__kicker {
-    font-family: var(--fuente-codigo);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-acento);
-}
-
-.cabecera h1 {
-    font-size: 2.4rem;
-}
-
-.cabecera__texto {
-    color: var(--color-suave);
-}
 
 /* ---------- Contenido ---------- */
 .contenido {
@@ -161,7 +129,7 @@ code {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 1rem;
 }
 
 .filtro {
@@ -362,4 +330,5 @@ code {
         font-size: 2rem;
     }
 }
+
 
