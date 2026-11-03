@@ -18,7 +18,7 @@ var artistas = [
     {
         dia: "Pop/Rock internacionañ",
         hora: "19:30",
-        imagen: "./albumes/SUYI.jpg",
+        imagen: "./albumes/UYI.jpg",
     },
     
     {
@@ -81,7 +81,7 @@ function pintarCartel(diaActuacion) {
     }
 
     // mostramos cuántos artistas se han pintado
-    contador.textContent = "Mostrando " + total + " artistas.";
+    contador.textContent = "Mostrando " + total + " albumes.";
     cartel.innerHTML = html;
 
     // Paso 4: ventana modal asociada a cada botón de cada artista
