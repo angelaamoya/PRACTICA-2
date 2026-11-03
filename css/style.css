@@ -6,7 +6,14 @@
   --reveal: 200px;  
   --basquerville: "Baskervville", serif;
 }
-
+h1 {
+    font-family: Arial;
+    font-size: 3rem;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
 html, body {
   margin: 0;
   min-height: 100%;
@@ -66,23 +73,6 @@ div.albumcover:hover {
    TIENDA
    ========================================================= */
 
-/* ---------- Variables ---------- */
-:root {
-    --color-fondo: #F3F6F5;
-    --color-superficie: #FFFFFF;
-    --color-texto: #12181B;
-    --color-suave: #5B6B67;
-    --color-acento: #16BFAE;
-    --color-borde: #DCE3E1;
-
-    --fuente-ui: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --fuente-codigo: "Courier New", monospace;
-
-    --espacio: 1.5rem;
-    --radio: 12px;
-    --ancho-max: 1100px;
-    --transicion: 0.25s ease;
-}
 
 /* ---------- Reset básico ---------- */
 * {
@@ -136,30 +126,11 @@ code {
     padding: 0.55rem 1.2rem;
     font: inherit;
     font-weight: 700;
-    color: var(--color-texto);
-    background-color: var(--color-superficie);
-    border: 2px solid var(--color-texto);
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+    background: none;   
+    border: 0;          
 }
 
-.filtro:hover {
-    border-color: var(--color-acento);
-}
 
-/* Clase que añade el JS al filtro elegido */
-.filtro.is-activo {
-    color: var(--color-superficie);
-    background-color: var(--color-texto);
-    border-color: var(--color-texto);
-}
-
-.contador {
-    font-family: var(--fuente-codigo);
-    font-size: 0.9rem;
-    color: var(--color-suave);
-}
 
 /* ---------- Cartel (las tarjetas las crea el JS) ---------- */
 .cartel {
@@ -167,7 +138,7 @@ code {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--espacio);
+    gap: 5%;
 }
 
 .artista {
@@ -175,10 +146,6 @@ code {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background-color: var(--color-superficie);
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio);
-    transition: transform var(--transicion), box-shadow var(--transicion);
 }
 
 .artista:hover {
@@ -188,33 +155,15 @@ code {
 
 /* Zona de color tipo póster: el color llega desde los datos (style) */
 .artista__poster {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.artista__poster {
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: flex-end;
     padding: 1.2rem;
-    background-color: var(--color-acento);
-}
-
-.artista__nombre {
-    font-size: 1.9rem;
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
-    color: var(--color-texto);
-    overflow-wrap: anywhere;
-}
-
-.artista__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 1.2rem;
-}
-
-.artista__datos {
-    font-size: 0.9rem;
-    color: var(--color-suave);
 }
 
 /* Mensaje si un filtro no tiene artistas (reto extra) */
@@ -229,11 +178,7 @@ code {
     flex-shrink: 0;
     padding: 0.5rem 1rem;
     font: inherit;
-    font-size: 0.9rem;
-    font-weight: 700;
-    border-radius: calc(var(--radio) / 2);
-    cursor: pointer;
-    transition: background-color var(--transicion), color var(--transicion);
+    font-size: 0rem;
 }
 
 .boton--borde {
@@ -328,6 +273,21 @@ code {
 
     .cabecera h1 {
         font-size: 2rem;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 510px) {
+    h1{
+        font-size: 2rem
+   }
+    p{
+        font-size: 1rem;
     }
 }
 
